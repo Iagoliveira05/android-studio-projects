@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ProfileActivity">
 
-    <Button
-        android:id="@+id/button_ir"
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:text="Ir para segunda activity" />
+        android:gravity="center"
+        android:text="Segunda Activity" />
+
+    <Button
+        android:id="@+id/button_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Voltar" />
+
+
 </LinearLayout>
