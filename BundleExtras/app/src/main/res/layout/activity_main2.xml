@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <EditText
         android:id="@+id/edit_numero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Insira um número"
+        android:hint="Insira outro número"
         android:inputType="number"/>
 
     <Button
@@ -21,5 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="OK" />
+
 
 </LinearLayout>
