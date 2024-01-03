@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_titulo"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:background="#00FF00"
+        android:gravity="center"
+        android:text="RelativeLayout"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:hint="Escreva algo"
+        android:layout_below="@+id/text_titulo"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_A"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_centerInParent="true"
+        android:background="#F0F000"
+        android:gravity="center"
+        android:text="A"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/text_B"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_centerInParent="true"
+        android:layout_toEndOf="@+id/text_A"
+        android:background="#00FFFF"
+        android:gravity="center"
+        android:text="B"
+        android:textSize="30sp" />
+
+
+</RelativeLayout>
