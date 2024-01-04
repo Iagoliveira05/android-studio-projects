@@ -24,6 +24,8 @@ class FullScreenActivity : AppCompatActivity() {
         binding = ActivityFullscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         val sharedPreference = this.getSharedPreferences("check_box", Context.MODE_PRIVATE)
         val editor = sharedPreference.edit()
         var isChecked = sharedPreference.getBoolean("isChecked", true)
@@ -86,28 +88,15 @@ class FullScreenActivity : AppCompatActivity() {
                     resources.getInteger(android.R.integer.config_mediumAnimTime).toLong()
             )
         }
+    }
 
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        }
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
