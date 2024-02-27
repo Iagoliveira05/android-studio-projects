@@ -13,7 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "RecyclerView2"
-include(":app")
+rootProject.name = "BDSqlite"
 include(":app")
  

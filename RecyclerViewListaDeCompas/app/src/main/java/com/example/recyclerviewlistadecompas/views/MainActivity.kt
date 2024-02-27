@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                 val produto = binding.editProduto.text.toString()
                 mock.listaProdutos[pos].id = (0..100).random()
 
+
                 mock.listaProdutos[pos].nome = produto
 
                 adapter.notifyDataSetChanged()
