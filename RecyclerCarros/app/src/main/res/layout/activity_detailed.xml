@@ -13,8 +13,7 @@
         android:layout_height="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/audi" />
+        android:scaleType="fitXY"/>
 
     <TextView
         android:id="@+id/text_model_detailed"
@@ -22,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:text="Modelo"
         android:textAlignment="textStart"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -32,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:text="34324234234"
         android:textAlignment="textStart"
         android:textSize="30sp"
         android:textStyle="italic" />

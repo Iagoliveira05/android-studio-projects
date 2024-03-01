@@ -11,6 +11,9 @@ import java.util.Locale
 
 
 class CarAdapter(val carList: ArrayList<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>(){
+
+    var onItemClick: ((Car) -> Unit)? = null
+
     class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageCar: ImageView = itemView.findViewById(R.id.image_car)
         val textModel: TextView = itemView.findViewById(R.id.text_model)
@@ -34,6 +37,10 @@ class CarAdapter(val carList: ArrayList<Car>) : RecyclerView.Adapter<CarAdapter.
 
         val formatCurrency = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
         holder.textPrice.text = formatCurrency.format(car.price)
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(car)
+        }
 
     }
 }
