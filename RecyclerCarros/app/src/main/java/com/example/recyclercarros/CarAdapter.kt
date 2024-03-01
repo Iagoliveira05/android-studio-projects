@@ -10,7 +10,7 @@ import java.text.NumberFormat
 import java.util.Locale
 
 
-class CarAdapter(val carList: ArrayList<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>(){
+class CarAdapter(var carList: ArrayList<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>(){
 
     var onItemClick: ((Car) -> Unit)? = null
 
@@ -18,6 +18,11 @@ class CarAdapter(val carList: ArrayList<Car>) : RecyclerView.Adapter<CarAdapter.
         val imageCar: ImageView = itemView.findViewById(R.id.image_car)
         val textModel: TextView = itemView.findViewById(R.id.text_model)
         val textPrice: TextView = itemView.findViewById(R.id.text_price)
+    }
+
+    fun setFilteredList(carList: ArrayList<Car>) {
+        this.carList = carList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {

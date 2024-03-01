@@ -2,9 +2,12 @@ package com.example.recyclercarros
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclercarros.databinding.ActivityMainBinding
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,6 +33,34 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        binding.searchViewCaro.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                filterList(newText)
+                return true
+            }
+        })
+    }
+
+    private fun filterList(query: String?) {
+        if (query != null) {
+            val filteredList = ArrayList<Car>()
+            for (i in carList) {
+                if (i.model?.lowercase(Locale.ROOT)!!.contains(query)) {
+                    filteredList.add(i)
+                }
+            }
+
+            if (filteredList.isEmpty()) {
+                Toast.makeText(applicationContext, "Nenhum carro encontrado", Toast.LENGTH_SHORT).show()
+            } else {
+                carAdapter.setFilteredList(filteredList)
+            }
+        }
     }
 
     private fun addDefaultData() {
