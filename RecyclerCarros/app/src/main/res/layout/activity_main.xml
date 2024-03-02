@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="false">
@@ -36,12 +36,19 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dividerColor="#3E000000"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="15dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="80dp"/>
+        android:layout_marginBottom="30dp"/>
 
 </LinearLayout>
