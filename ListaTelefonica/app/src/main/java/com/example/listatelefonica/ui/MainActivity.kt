@@ -38,12 +38,11 @@ class MainActivity : AppCompatActivity() {
         loadList()
 
         binding.listViewContacts.setOnItemClickListener { _, _, position, _ ->
-            /*Toast.makeText(applicationContext, contactList[position].name, Toast.LENGTH_SHORT)
-                .show()*/
-
             val intent = Intent(applicationContext, ContactDetailActivity::class.java)
             intent.putExtra("id", contactList[position].id)
-            startActivity(intent)
+            //startActivity(intent)
+            result.launch(intent)
+
         }
 
         binding.buttonAdd.setOnClickListener {

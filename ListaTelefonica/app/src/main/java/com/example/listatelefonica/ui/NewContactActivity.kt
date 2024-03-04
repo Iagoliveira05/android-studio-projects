@@ -1,8 +1,12 @@
 package com.example.listatelefonica.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.listatelefonica.ContactImageSelectionActivity
 import com.example.listatelefonica.R
 import com.example.listatelefonica.database.DBHelper
 import com.example.listatelefonica.databinding.ActivityNewContactBinding
@@ -10,6 +14,9 @@ import com.example.listatelefonica.databinding.ActivityNewContactBinding
 class NewContactActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewContactBinding
+    private lateinit var launcher: ActivityResultLauncher<Intent>
+    private var id: Int? = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNewContactBinding.inflate(layoutInflater)
@@ -44,6 +51,20 @@ class NewContactActivity : AppCompatActivity() {
         binding.buttonCancel.setOnClickListener {
             setResult(0, i)
             finish()
+        }
+
+        binding.imageContact.setOnClickListener {
+            launcher.launch(Intent(applicationContext, ContactImageSelectionActivity::class.java))
+        }
+
+        launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.data != null && it.resultCode == 1) {
+                id = it.data?.extras?.getInt("id")
+                binding.imageContact.setImageDrawable(resources.getDrawable(id!!))
+            } else {
+                id = -1
+                binding.imageContact.setImageResource(R.drawable.profiledefault)
+            }
         }
     }
 }

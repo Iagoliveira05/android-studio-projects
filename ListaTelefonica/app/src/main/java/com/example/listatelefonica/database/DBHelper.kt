@@ -133,7 +133,7 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, "database.db", null,
         contentValues.put("phone", phone)
         contentValues.put("imageId", imageId)
 
-        val res = db.update("contacts", contentValues, "id=?", arrayOf(id.toString()))
+        val res = db.update("contact", contentValues, "id=?", arrayOf(id.toString()))
         db.close()
 
         return res
@@ -169,6 +169,7 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, "database.db", null,
             contactModel = ContactModel(
                 id = c.getInt(idIndex),
                 name = c.getString(nameIndex),
+                address = c.getString(addressIndex),
                 email = c.getString(emailIndex),
                 phone = c.getInt(phoneIndex),
                 imageId = c.getInt(imageIdIndex),
