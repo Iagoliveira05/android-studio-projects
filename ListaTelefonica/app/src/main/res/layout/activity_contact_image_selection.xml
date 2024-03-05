@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactImageSelectionActivity">
+    tools:context=".ui.ContactImageSelectionActivity">
 
     <TextView
         android:id="@+id/text_title"
@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="10dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/image_profile3"
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="10dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/image_profile5"

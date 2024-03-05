@@ -6,12 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <!--
     <ListView
         android:id="@+id/list_view_contacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_add"
+        android:layout_alignParentTop="true" /> -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyler_view_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_add"
         android:layout_alignParentTop="true" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_order"
